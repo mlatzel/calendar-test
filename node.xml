@@ -1,85 +1,85 @@
-<extension groupaccess="all:r" id="exteN8RfnC7uKZ2d" modified="20150129.162824" modifiedBy="markus" name="VehiklCalendar" webpalschematype="wpExtension">
-      <stylesheet id="stylg7cJmjr_kn22" lang="any" modified="20150128.105446" modifiedBy="michael.pouris" show-in="main" webpalschematype="wpPageRaw">&lt;?xml version="1.0"?&gt;
-&lt;!DOCTYPE xsl:stylesheet [
-&lt;!ENTITY nbsp "&amp;#160;" &gt;
-]&gt;
+<extension groupaccess="all:r" id="exteN8RfnC7uKZ2d" modified="20150129.162824" modifiedBy="markus" name="TestCalendar" webpalschematype="wpExtension">
+  <stylesheet id="stylg7cJmjr_kn22" lang="any" modified="20150128.105446" modifiedBy="michael.pouris" show-in="main" webpalschematype="wpPageRaw">&lt;?xml version="1.0"?&gt;
+  &lt;!DOCTYPE xsl:stylesheet [
+  &lt;!ENTITY nbsp "&amp;#160;" &gt;
+  ]&gt;
 
-&lt;!-- (c) 2001-present All Copyrights Palomino System Innovations Inc.
-Illegal reproduction and disclosure will be prosecuted  --&gt;
+  &lt;!-- (c) 2001-present All Copyrights Palomino System Innovations Inc.
+  Illegal reproduction and disclosure will be prosecuted  --&gt;
 
-&lt;xsl:stylesheet
-                version="1.0"
-                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:wp="http://www.palominosys.com/wp"
-                xmlns:php="http://php.net/xsl"
-                xmlns:date="http://exslt.org/dates-and-times"
-                xmlns:exsl="http://exslt.org/common"
-                extension-element-prefixes="exsl"
-                &gt;
+  &lt;xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:wp="http://www.palominosys.com/wp"
+  xmlns:php="http://php.net/xsl"
+  xmlns:date="http://exslt.org/dates-and-times"
+  xmlns:exsl="http://exslt.org/common"
+  extension-element-prefixes="exsl"
+  &gt;
 
-  &lt;xsl:template name="include-vehikl-calendar-styles"&gt;
-    &lt;link href="?ft=style/fullcalendar/fullcalendar.min.css" rel="stylesheet" /&gt;
-    &lt;link href="?ft=style/vehikl-calendar.css" rel="stylesheet" /&gt;
+  &lt;xsl:template name="include-test-calendar-styles"&gt;
+  &lt;link href="?ft=style/fullcalendar/fullcalendar.min.css" rel="stylesheet" /&gt;
+  &lt;link href="?ft=style/test-calendar.css" rel="stylesheet" /&gt;
   &lt;/xsl:template&gt;
 
-  &lt;xsl:template name="include-vehikl-calendar-scripts"&gt;
-    &lt;script type="text/javascript" src="?ft=js/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
-    &lt;script type="text/javascript" src="?ft=js/vehikl-calendar.js"&gt;&lt;/script&gt;
+  &lt;xsl:template name="include-test-calendar-scripts"&gt;
+  &lt;script type="text/javascript" src="?ft=js/fullcalendar/fullcalendar.min.js"&gt;&lt;/script&gt;
+  &lt;script type="text/javascript" src="?ft=js/test-calendar.js"&gt;&lt;/script&gt;
   &lt;/xsl:template&gt;
 
-  &lt;xsl:template match="vehikl-calendar"&gt;
-    &lt;div class="calendar container"&gt;
-      &lt;div class="viewport" id="{./@id}_calendar"&gt;&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;script&gt;
-      var wpCalendar = {
-        _id: "&lt;xsl:value-of select="./@id" /&gt;",
-        _events: [&lt;xsl:apply-templates select="." mode="output_json" /&gt;]
-      };
+  &lt;xsl:template match="test-calendar"&gt;
+  &lt;div class="calendar container"&gt;
+  &lt;div class="viewport" id="{./@id}_calendar"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+  var wpCalendar = {
+  _id: "&lt;xsl:value-of select="./@id" /&gt;",
+  _events: [&lt;xsl:apply-templates select="." mode="output_json" /&gt;]
+  };
 
-      console.log(wpCalendar._events);
-    &lt;/script&gt;  
+  console.log(wpCalendar._events);
+  &lt;/script&gt;
   &lt;/xsl:template&gt;
 
-  &lt;xsl:template match="vehikl-calendar/event" mode="output_json"&gt;
-    {
-    "_id": "&lt;xsl:value-of select="./@id" /&gt;",
-    "title": "&lt;xsl:value-of select="./title" /&gt;",
-    "start": moment("&lt;xsl:value-of select="./start" /&gt;","YYYYMMDD").toISOString(),
-    "end": moment("&lt;xsl:value-of select="./end" /&gt;","YYYYMMDD").toISOString(),
-    "url": "&lt;xsl:value-of select="./url" /&gt;"
-    },
-  &lt;/xsl:template&gt;
-  
-  &lt;xsl:template match="vehikl-calendar/event"&gt;
-    &lt;div&gt;
-      Hello World
-    &lt;/div&gt;
+  &lt;xsl:template match="test-calendar/event" mode="output_json"&gt;
+  {
+  "_id": "&lt;xsl:value-of select="./@id" /&gt;",
+  "title": "&lt;xsl:value-of select="./title" /&gt;",
+  "start": moment("&lt;xsl:value-of select="./start" /&gt;","YYYYMMDD").toISOString(),
+  "end": moment("&lt;xsl:value-of select="./end" /&gt;","YYYYMMDD").toISOString(),
+  "url": "&lt;xsl:value-of select="./url" /&gt;"
+  },
   &lt;/xsl:template&gt;
 
+  &lt;xsl:template match="test-calendar/event"&gt;
+  &lt;div&gt;
+  Hello World
+  &lt;/div&gt;
+  &lt;/xsl:template&gt;
 
-&lt;/xsl:stylesheet&gt;</stylesheet>
-      <node-schema id="noded0IfAL6AK971" lang="any" modified="20150129.162824" modifiedBy="markus" show-in="main" webpalschematype="wpPageRaw">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
-  
-  &lt;complexType name="vehiklCalendar" edittype="table"&gt;
-    &lt;attribute name="calendarViewMode" type="wpString" use="oneof" value="day view,week view,month view,year view"/&gt;
-    &lt;attribute name="name" use="required" type="wpName"/&gt;
-    &lt;attribute name="id" use="auto" value="calendar" type="wpString"/&gt;
-    
-    &lt;element name="event" type="vehiklCalendarEvent" /&gt;
-  &lt;/complexType&gt; 
 
-  &lt;complexType name="vehiklCalendarEvent" edittype="sheet"&gt;
-    &lt;attribute name="name" type="wpString" use="required"/&gt;
-    &lt;element name="title" type="wpName" use="required"/&gt;
-    &lt;element name="start" type="wpDate" /&gt;
-    &lt;element name="end" type="wpDate" /&gt;
-    &lt;element name="allDay" type="wpString" use="oneof" value="true,false" /&gt;
-    &lt;element name="url" type="wpString" /&gt;
-    &lt;element name="text" type="wpHtml" /&gt;
-    &lt;element name="file" type="wpFile" /&gt;
+  &lt;/xsl:stylesheet&gt;</stylesheet>
+  <node-schema id="noded0IfAL6AK971" lang="any" modified="20150129.162824" modifiedBy="markus" show-in="main" webpalschematype="wpPageRaw">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
+
+  &lt;complexType name="testCalendar" edittype="table"&gt;
+  &lt;attribute name="calendarViewMode" type="wpString" use="oneof" value="day view,week view,month view,year view"/&gt;
+  &lt;attribute name="name" use="required" type="wpName"/&gt;
+  &lt;attribute name="id" use="auto" value="calendar" type="wpString"/&gt;
+
+  &lt;element name="event" type="testCalendarEvent" /&gt;
   &lt;/complexType&gt;
-  
-&lt;/schema&gt;
-</node-schema>
-    </extension>
+
+  &lt;complexType name="testCalendarEvent" edittype="sheet"&gt;
+  &lt;attribute name="name" type="wpString" use="required"/&gt;
+  &lt;element name="title" type="wpName" use="required"/&gt;
+  &lt;element name="start" type="wpDate" /&gt;
+  &lt;element name="end" type="wpDate" /&gt;
+  &lt;element name="allDay" type="wpString" use="oneof" value="true,false" /&gt;
+  &lt;element name="url" type="wpString" /&gt;
+  &lt;element name="text" type="wpHtml" /&gt;
+  &lt;element name="file" type="wpFile" /&gt;
+  &lt;/complexType&gt;
+
+  &lt;/schema&gt;
+  </node-schema>
+</extension>
