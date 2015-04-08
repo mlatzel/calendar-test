@@ -1,5 +1,5 @@
-<extension groupaccess="all:r" id="exteN8RfnC7uKZ2d" modified="20150408.161329" modifiedBy="admin" name="TestCalendar" webpalschematype="wpExtension">
-  <stylesheet id="stylg7cJmjr_kn22" lang="any" modified="20150408.161329" modifiedBy="admin" show-in="main" webpalschematype="wpAppStylesheet">&lt;?xml version="1.0"?&gt;
+<extension groupaccess="all:r" id="exteN8RfnC7uKZ2d" modified="20150129.162824" modifiedBy="markus" name="TestCalendar" webpalschematype="wpExtension">
+  <stylesheet id="stylg7cJmjr_kn22" lang="any" modified="20150128.105446" modifiedBy="michael.pouris" show-in="main" webpalschematype="wpPageRaw">&lt;?xml version="1.0"?&gt;
   &lt;!DOCTYPE xsl:stylesheet [
   &lt;!ENTITY nbsp "&amp;#160;" &gt;
   ]&gt;
@@ -20,7 +20,6 @@
   &lt;xsl:template name="include-test-calendar-styles"&gt;
   &lt;link href="?ft=style/fullcalendar/fullcalendar.min.css" rel="stylesheet" /&gt;
   &lt;link href="?ft=style/test-calendar.css" rel="stylesheet" /&gt;
-    &lt;i&gt;test&lt;/i&gt;
   &lt;/xsl:template&gt;
 
   &lt;xsl:template name="include-test-calendar-scripts"&gt;
@@ -60,7 +59,7 @@
 
 
   &lt;/xsl:stylesheet&gt;</stylesheet>
-  <node-schema id="noded0IfAL6AK971" lang="any" modified="20150408.161300" modifiedBy="admin" show-in="main" webpalschematype="wpPageRaw">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
+  <node-schema id="noded0IfAL6AK971" lang="any" modified="20150129.162824" modifiedBy="markus" show-in="main" webpalschematype="wpPageRaw">&lt;schema xmlns="http://www.palominosys.com/wpschema"&gt;
 
   &lt;complexType name="testCalendar" edittype="table"&gt;
   &lt;attribute name="calendarViewMode" type="wpString" use="oneof" value="day view,week view,month view,year view"/&gt;
